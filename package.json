@@ -1,6 +1,6 @@
 {
   "name": "freedns-api",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A node.js wrapper around freedns.afraid.org API",
   "main": "index.js",
   "directories": {
