@@ -1,19 +1,8 @@
-# freedns-api
-
-[![Dependency Status](https://david-dm.org/j-Chaniotis/freedns-api.svg)](https://david-dm.org/j-Chaniotis/freedns-api)
-[![npm version](https://badge.fury.io/js/freedns-api.svg)](https://badge.fury.io/js/freedns-api)
-
-A node.js wrapper around freedns.afraid.org API
-
-## Installation
-
-`npm install freedns-api`
-
-## Usage
-
-```javascript
 'use strict';
-const freednsApi = require('freedns-api');
+// {username: 'xxxxx', password:'xxxxx'} object
+const config = require('../../../freednsConfig');
+const freednsApi = require('../lib/api');
+
 (async () => {
     /**
      *  Wrap everything inside a try-catch block.
@@ -22,10 +11,7 @@ const freednsApi = require('freedns-api');
     try {
 
         // Get a list of all account dns records
-        const entries = await freednsApi.getdyndns({
-            username: 'BruceWayne',
-            password: 'B@tM@n'
-        });
+        const entries = await freednsApi.getdyndns(config);
 
         // Update the first record with a user provided ip address
         const status = await freednsApi.update({
@@ -40,9 +26,3 @@ const freednsApi = require('freedns-api');
     }
     
 })();
-
-```
-
-## License
-
-[MIT](https://github.com/J-Chaniotis/freedns-api/blob/master/LICENSE)
